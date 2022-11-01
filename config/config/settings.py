@@ -29,13 +29,20 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'admin_volt.apps.AdminVoltConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # 3rd party
+    'crispy_forms',  # new
+
+    # Local
     'accounts',
+    'pages',
 ]
 
 MIDDLEWARE = [
@@ -122,3 +129,7 @@ AUTH_USER_MODEL = 'accounts.CustomUser'  # new
 LOGIN_REDIRECT_URL = 'home'  # new
 
 LOGOUT_REDIRECT_URL = 'home'  # new
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
